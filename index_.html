@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Club, Bagworth | WMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --forest-green: #013220;
+            --deep-green: #002216;
+            --gold: #c5a059;
+            --gold-hover: #e0bc7a;
+            --light-cream: #f4f1ea;
+            --text-gray: #d1d1d1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--forest-green); color: white; line-height: 1.6; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--gold); }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 34, 22, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+        }
+        .nav-links a { color: white; text-decoration: none; margin-left: 1.5rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(1, 50, 32, 0.7), rgba(1, 50, 32, 0.9)), url('hero-bg.jpg'); 
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero img { width: 180px; margin-bottom: 1.5rem; border-radius: 50%; border: 3px solid var(--gold); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+
+        /* Sections */
+        .content-section { padding: 100px 10% 80px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 2px; background: var(--gold); margin: 15px auto; }
+
+        /* Membership Table */
+        .membership-box { 
+            background: var(--deep-green); 
+            border: 1px solid var(--gold); 
+            max-width: 900px; 
+            margin: 0 auto; 
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(197, 160, 89, 0.1); color: var(--gold); padding: 20px; text-transform: uppercase; }
+        td { padding: 20px; border-top: 1px solid rgba(197, 160, 89, 0.1); }
+        .price { color: var(--gold); font-weight: bold; font-size: 1.2rem; }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: grayscale(30%);
+        }
+        .gallery-item:hover img { transform: scale(1.1); filter: grayscale(0%); }
+
+        /* Buttons & Forms (Same as previous) */
+        .btn { display: inline-block; padding: 12px 30px; background: var(--gold); color: var(--forest-green); text-decoration: none; font-weight: bold; transition: 0.3s; text-transform: uppercase; border: none; cursor: pointer; }
+        .btn:hover { background: white; }
+        .contact-container { max-width: 700px; margin: 0 auto; }
+        input, textarea, select { width: 100%; padding: 12px; background: var(--deep-green); border: 1px solid #0a442f; color: white; margin-bottom: 15px; }
+
+        footer { text-align: center; padding: 40px; background: var(--deep-green); font-size: 0.8rem; color: var(--text-gray); }
+
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-family: 'Playfair Display'; color: var(--gold); font-weight: bold; letter-spacing: 1px;">THE CLUB BAGWORTH</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#membership">Membership</a>
+            <a href="#events">What's On</a>
+            <a href="#hire">Room Hire</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <img src="round_logo.jpg" alt="Logo">
+        <h1>The Club, Bagworth</h1>
+        <p>Tradition, Community, and Quality Entertainment Since 1919</p>
+        <div style="margin-top: 20px;">
+            <a href="#membership" class="btn">View Memberships</a>
+        </div>
+    </header>
+
+    <section class="content-section" id="membership">
+        <h2 class="section-title">Membership Details</h2>
+        <div class="membership-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Benefits</th>
+                        <th>Annual Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Full Member</strong></td>
+                        <td>Full voting rights, CIU affiliation, reduced bar prices, event priority.</td>
+                        <td class="price">£20.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Senior Member</strong></td>
+                        <td>Full benefits for our members aged 65+.</td>
+                        <td class="price">£10.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Associate</strong></td>
+                        <td>Access to the club and facilities (No voting rights).</td>
+                        <td class="price">£15.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="text-align: center; margin-top: 30px; color: var(--text-gray);">New members are always welcome. Please visit the bar to collect an application form.</p>
+    </section>
+
+    <section class="content-section" id="gallery" style="background: var(--deep-green);">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="gallery/pic1.jpg" alt="Interior"></div>
+            <div class="gallery-item"><img src="gallery/pic2.jpg" alt="Bar Area"></div>
+            <div class="gallery-item"><img src="gallery/pic3.jpg" alt="Function Room"></div>
+            <div class="gallery-item"><img src="gallery/pic4.jpg" alt="Event Night"></div>
+            <div class="gallery-item"><img src="gallery/pic5.jpg" alt="Garden Area"></div>
+            <div class="gallery-item"><img src="gallery/pic6.jpg" alt="Lounge"></div>
+        </div>
+    </section>
+
+    <section class="content-section" id="hire">
+        <h2 class="section-title">Room Hire</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p>Our spacious function room is available for private events. Please ensure you have read our terms and conditions before submitting a booking enquiry.</p>
+            <br><br>
+            <a href="room-hire-terms.pdf" class="btn" download>Download Terms & Hire Agreement (PDF)</a>
+        </div>
+    </section>
+
+    <section class="content-section" id="contact" style="background: var(--deep-green);">
+        <h2 class="section-title">Enquiries</h2>
+        <div class="contact-container">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <select>
+                    <option>Enquiry Type...</option>
+                    <option>Room Hire Enquiry</option>
+                    <option>Membership Enquiry</option>
+                    <option>General Support</option>
+                </select>
+                <textarea rows="6" placeholder="Your Message..."></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 The Club, Bagworth WMC | Station Road, Bagworth</p>
+    </footer>
+
+</body>
+</html>
